@@ -1,0 +1,44 @@
+<ion-header mode="md">
+
+  <ion-toolbar color="completelight">
+    <ion-buttons left="" style="margin-left: 6px;position: absolute" tappable (click)="back()">
+      <button ion-button="" icon-only="">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title mode="ios" >
+      <img src="{{recipient?.photoURL}}">
+      {{ recipient?.displayName}}
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding >
+  <ul  #scrollMe >
+        <li *ngFor="let message of messages" class="{{getCss(message)}}">
+          <div class="msg_content">
+            {{message?.text}}
+          </div>
+          <time>{{message?.timestamp | FromNow}}</time>
+        </li>
+
+  </ul>
+
+</ion-content>
+<ion-footer no-border="" mode="md">
+  <div class="reply">
+    <div class="input_area">
+      <!-- <button ion-button="" clear icon-only="" (tap)="attach($event)">
+        <ion-icon name="attach"></ion-icon>
+      </button> -->
+      <input type="text" [(ngModel)]="text" placeholder="Type messege..">
+    </div>
+    <button (tap)="sendMessage()" ion-button="" clear icon-only="">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </div>
+
+
+
+</ion-footer>

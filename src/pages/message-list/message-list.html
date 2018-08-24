@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>Messages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content >
+<ion-content>
+  <div>
+     <ion-list no-border="">
+      <ion-item no-lines="" *ngFor="let message of messages" tappable (click)="messagePage(message.user, message.mid)">
+        <ion-avatar item-start>
+          <img src="{{message.user.photoURL}}" >
+          <div id="online"></div>
+        </ion-avatar>
+        <h2>{{ message.user.displayName}}</h2>
+        <p text-nowrap>{{ message.text}}</p>
+        <span item-end="" class="right_side">
+      <time>{{message.timestamp | date:'shortTime'}}</time>
+      <ion-badge *ngIf="message.new" color="secondary">1</ion-badge>
+    </span>
+      </ion-item>
+    </ion-list>
+  
+  
+   
+  </div>
+
+</ion-content>

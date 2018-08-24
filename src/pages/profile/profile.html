@@ -1,0 +1,28 @@
+
+<ion-header>
+    <ion-toolbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-title>Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content >
+<ion-content>
+
+    <div class="wrapper" >
+      <div class="profile_area">
+        <div class="profile_img">
+          <img src="{{user?.photoURL}}" alt="profile picture">
+        </div>
+      </div>
+      <h4>{{user?.displayName}}</h4>
+    </div>
+    <button ion-button (click)="ProfileEditPage()" tappable clear block>Edit Profile</button>
+    <div >
+     
+      <button ion-button clear block (click)="signout()" tappable>Sign Out</button>
+    </div>
+  
+  </ion-content>
+  

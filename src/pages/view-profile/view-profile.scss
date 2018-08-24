@@ -1,0 +1,114 @@
+page-view-profile {
+    .scroll-content {
+      ion-slide.swiper-slide {
+        left: 25%;
+    }
+    
+  
+    .thumb-img {
+        padding: 10px;
+    }
+      background-color: #ffffff;
+      .wrapper {
+        background-color: #f8f8f8;
+        padding: 32px;
+        z-index: -2;
+        position: relative;
+        h4 {
+          color: map_get($colors, dark);
+          text-align: center;
+          margin-bottom: 4px;
+        }
+        p {
+          color: map_get($colors, dark);
+          text-align: center;
+          margin-bottom: 0;
+          opacity: 0.5;
+          margin-top: 0;
+        }
+        .profile_area {
+          position: relative;
+          width: 100px;
+          height: 100px;
+          margin: auto;
+          .profile_img {
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            margin: auto;
+            border: 2px solid map_get($colors, light);
+            img {
+              width: 100%;
+            }
+          }
+          .online {
+            position: absolute;
+            top: 10px;
+            right: 2px;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 100%;
+            background-color: map_get($colors, secondary);
+            border: 2px solid map_get($colors, light);
+          }
+        }
+      }
+      .btn-area {
+        display: flex;
+        .button {
+          flex: 1;
+          border-right: 1px solid map_get($colors, lessdark);
+          border-radius: 0;
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+      .profile_details {
+        border-top: 1px solid #f3f3f3;
+        position: relative;
+        padding-top: 12px;
+        .item {
+          border: 0 !important;
+          .icon {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            color: map_get($colors, primary);
+          }
+          .item-inner {
+            border-bottom: 1px solid map_get($colors, lessdark);
+            color: #414141;
+            margin-left: 10px;
+          }
+        }
+        .address {
+          .icon {
+            align-self: flex-start;
+          }
+          .label {
+            white-space: normal;
+          }
+        }
+      }
+      .premium_btn {
+        width: 100%;
+        border-radius: 45px;
+        min-height: 40px;
+        color: map_get($colors, primary);
+      }
+    }
+    ion-slide.swiper-slide {
+      left: 25%;
+  }
+  
+  .slide-zoom {
+      background: #e6e6e6;
+  }
+
+  .thumb-img {
+      padding: 10px;
+  }
+  }
+  

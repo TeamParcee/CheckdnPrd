@@ -1,0 +1,169 @@
+<ion-header>
+
+  <ion-navbar color="completelight">
+    <ion-title>Edit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="user_img_wrapper">
+    <ion-row>
+      <ion-col col-8>
+        <div class="item_img">
+          <div id="img_wrapper">
+            <img src="{{pics[1]}}" alt="">
+            <img *ngIf="!pics[1]" src="../../assets/imgs/noimage.png" alt="">
+          </div>
+          <label for="pic1" ion-button small icon-only mode="ios">
+              <ion-icon name="add"></ion-icon>
+          </label>
+          <input (change)="previewPic(1, $event)" id="pic1" type="file"/>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="item_img">
+          <div class="img_wrapper">
+              <img src="{{pics[2]}}" alt="">
+              <img *ngIf="!pics[2]" src="../../assets/imgs/noimage.png" alt="">
+          </div>
+          <label for="pic2" ion-button small icon-only mode="ios">
+              <ion-icon name="add"></ion-icon>
+          </label>
+          <input (change)="previewPic(2, $event)" id="pic2" type="file"/>
+        </div>
+        <div class="item_img">
+          <div class="img_wrapper">
+              <img src="{{pics[3]}}" alt="">
+              <img *ngIf="!pics[3]" src="../../assets/imgs/noimage.png" alt="">
+          </div>
+          <label for="pic3" ion-button small icon-only mode="ios">
+              <ion-icon name="add"></ion-icon>
+          </label>
+          <input (change)="previewPic(3, $event)" id="pic3" type="file"/>
+        </div>
+
+      </ion-col>
+    </ion-row>
+    <ion-row class="btm_imgs">
+      <ion-col col-4>
+        <div class="item_img" id="bottom_img">
+          <div class="img_wrapper">
+              <img src="{{pics[4]}}" alt="">
+              <img *ngIf="!pics[4]" src="../../assets/imgs/noimage.png" alt="">
+          </div>
+          <label for="pic4" ion-button small icon-only mode="ios">
+              <ion-icon name="add"></ion-icon>
+          </label>
+          <input (change)="previewPic(4, $event)" id="pic4" type="file"/>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="item_img">
+          <div class="img_wrapper">
+              <img src="{{pics[5]}}" alt="">
+              <img *ngIf="!pics[5]" src="../../assets/imgs/noimage.png" alt="">
+          </div>
+          <label for="pic5" ion-button small icon-only mode="ios">
+              <ion-icon name="add"></ion-icon>
+          </label>
+          <input (change)="previewPic(5, $event)" id="pic5" type="file"/>
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <div class="item_img">
+          <div class="img_wrapper">
+              <img src="{{pics[6]}}" alt="">
+              <img *ngIf="!pics[6]" src="../../assets/imgs/noimage.png" alt="">
+          </div>
+          <label for="pic6" ion-button small icon-only mode="ios">
+              <ion-icon name="add"></ion-icon>
+          </label>
+          <input (change)="previewPic(6, $event)" id="pic6" type="file"/>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+
+  <ion-list>
+    <ion-list-header mode="md">Job Title</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input [(ngModel)]="job" type="text" placeholder="Add Job Title" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header mode="md">Company</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input   [(ngModel)]="company"  type="text" placeholder="Add Company" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-list-header mode="md">College</ion-list-header>
+    <ion-item no-lines="">
+      <ion-input  [(ngModel)]="college"  type="text" placeholder="Add College" clearInput=""></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-list>
+    <ion-list-header mode="md">Connect</ion-list-header>
+    <ion-item no-lines="">
+      <ion-icon name="logo-instagram" item-start></ion-icon>
+      Connect Instagram
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-icon name="logo-facebook" item-start></ion-icon>
+      Connect Facebook
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-icon name="logo-twitter" item-start></ion-icon>
+      Connect Twitter
+    </ion-item>
+  </ion-list> -->
+
+
+  <ion-list [(ngModel)]="gender" radio-group>
+    <ion-list-header mode="md">Gender</ion-list-header>
+    <ion-item>
+      <ion-label>Male</ion-label>
+      <ion-radio (ionSelect)="gender = 'Male'" checked="gender == 'Male'" value="Male"></ion-radio>
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-label>Female</ion-label>
+      <ion-radio (ionSelect)="gender = 'Female'" checked="gender == 'Female'" value="Female"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [(ngModel)]="relationship"  radio-group>
+      <ion-list-header mode="md">Relationship Status</ion-list-header>
+      <ion-item>
+        <ion-label>Single</ion-label>
+        <ion-radio (ionSelect)="relationship = 'Single'" value="Single"></ion-radio>
+      </ion-item>
+      <ion-item no-lines="">
+        <ion-label>In Relationship</ion-label>
+        <ion-radio (ionSelect)="relationship = 'Relationship'" value="Relationship"></ion-radio>
+      </ion-item>
+      <ion-item no-lines="">
+          <ion-label>Not Telling</ion-label>
+          <ion-radio (ionSelect)="relationship = 'n/a'"  value="n/a"></ion-radio>
+        </ion-item>
+    </ion-list>
+  <!-- <ion-list>
+    <ion-list-header mode="md">Control profile</ion-list-header>
+    <ion-item>
+      <ion-label>Don't show my age</ion-label>
+      <ion-toggle item-end checked="false" mode="wp"></ion-toggle>
+    </ion-item>
+    <ion-item no-lines="">
+      <ion-label>Make my distance invisible</ion-label>
+      <ion-toggle item-end checked="false" mode="wp"></ion-toggle>
+    </ion-item>
+  </ion-list> -->
+<button block ion-button (click)="save()" tappable>Save</button>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{user?.displayName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="wrapper" >
+    <div class="profile_area">
+      <div class="profile_img">
+        <img src="{{user?.photoURL}}" alt="profile picture">
+      </div>
+    </div>
+  </div>
+  <ion-slides style="height: 200px" class="image-slider" loop="true" slidesPerView="2">
+      <ion-slide *ngFor="let pic of pics">
+        <img src="{{pic}}" class="thumb-img" imageViewer/>
+      </ion-slide>
+    </ion-slides>
+
+  <button ion-button clear (click)="sendMessagePage()" tappable>Message</button>
+  <div class="profile_details" >
+    <ion-list no-lines>
+        <ion-item>
+          <h2>Company</h2>
+          <ion-icon name="bowtie" item-start></ion-icon>            
+            {{user?.company}}
+        </ion-item>
+        <ion-item>
+            <h2>Job Title</h2>
+              <ion-icon name="briefcase" item-start></ion-icon>            
+              {{user?.job}}
+        </ion-item>
+        <ion-item>
+            <h2>College</h2>
+            <ion-icon name="school" item-start></ion-icon>            
+            {{user?.college}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="male" item-start></ion-icon>
+        <h2>Gender</h2>
+        {{user?.gender}}
+      </ion-item>
+      <ion-item>
+      <ion-icon name="heart" item-start></ion-icon>
+      <h2>Relationship Status</h2>
+      {{user?.relationship}}
+    </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
