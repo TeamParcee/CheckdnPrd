@@ -70,9 +70,9 @@ export class HomePage {
 
       // get the placeid of the checkdn place
         let placeid = this.user.checkdn.placeid;
-  
+        
         firebase.firestore().collection("/feeds/" + placeid + "/feed/")
-        .limit(10)
+        .limit(20)
         .orderBy("timestamp", "desc")
         .onSnapshot((postSnap)=>{
           let posts = [];
@@ -140,18 +140,18 @@ export class HomePage {
     }
     
     
-    async doInfinite(infiniteScroll) {
-      firebase.firestore().collection("/feeds/" + this.user.checkdn.placeid + "/feed/")
-      .orderBy("timestamp", "desc")
-      .limit(this.feed.length + 2)
-      .onSnapshot((postSnap)=>{
-        let posts = [];
-        postSnap.forEach((post)=>{
-          posts.push(post.data())
-        })
-        this.feed = posts;
-        infiniteScroll.complete()
-      })
+    // async doInfinite(infiniteScroll) {
+    //   firebase.firestore().collection("/feeds/" + this.user.checkdn.placeid + "/feed/")
+    //   .orderBy("timestamp", "desc")
+    //   .limit(this.feed.length + 2)
+    //   .onSnapshot((postSnap)=>{
+    //     let posts = [];
+    //     postSnap.forEach((post)=>{
+    //       posts.push(post.data())
+    //     })
+    //     this.feed = posts;
+    //     infiniteScroll.complete()
+    //   })
       
-    }
+    // }
 }

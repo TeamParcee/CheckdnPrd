@@ -44,8 +44,8 @@ export class ProfileEditPage {
   }
   async getUser(){
     this.user = await this.ls.get('user');
+
     this.pics = this.user.pics;
-    this.pics[0] = this.user.photoURL;
     this.company = this.user.company;
     this.job = this.user.job;
     this.college = this.user.college;

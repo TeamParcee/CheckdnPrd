@@ -20,14 +20,12 @@
     <ion-avatar (tap)="viewProfilePage(post?.user)" item-left>
       <img src="{{post.user?.photoURL}}" />
     </ion-avatar>
+    <p>{{post.user?.displayName}}</p>
     <span class="post">{{post?.message}}</span>
-    <p>{{post?.timestamp | FromNow}}</p>
+    
   </ion-item>
 </ion-list>
 
-<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
 
 </ion-content>
 <ion-fab *ngIf="!showFooter" bottom right>

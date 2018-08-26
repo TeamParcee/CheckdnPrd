@@ -120,6 +120,7 @@ export class WelcomePage {
 
           
           this.fs.updateDocument("/users/", this.user.uid, this.user);
+          this.user = await this.fs.getDocument("users", user_firebase.uid);
         } else {
           this.user = {
           displayName: user_firebase.displayName,
