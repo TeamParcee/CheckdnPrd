@@ -8,12 +8,11 @@ import { Platform } from '../../node_modules/ionic-angular/platform/platform';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = "WelcomePage";
+  rootPage:any = "HomePage";
   constructor(public platform: Platform) {
     this.initializeApp();
     this.pages = [
       { title: 'Home', component: "HomePage" },
-      { title: 'Messages', component: "MessageListPage", },
       { title: 'Profile', component: "ProfilePage" }
     ];
     

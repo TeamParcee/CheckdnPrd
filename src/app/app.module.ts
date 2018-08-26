@@ -40,7 +40,9 @@ import { CheckdnProvider } from '../providers/checkdn/checkdn';
     SuperTabsModule,
     HttpModule,
     IonicImageViewerModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      mode: "ios"
+    }),
     IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],

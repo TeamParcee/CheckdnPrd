@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+    <ion-buttons start>
+      <button menuToggle ion-button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
     <ion-title>Home</ion-title>
+    <ion-buttons end>
+        <button (click)="messageListPage()"  ion-button>
+          <ion-icon name="mail"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content >
@@ -17,7 +25,7 @@
   <button clear (tap)="checkdnUsersPage()" ion-button>Checkdn Users: {{users?.length}}</button>
   </ion-list-header>
   <ion-item *ngFor="let post of feed">
-    <ion-avatar (tap)="viewProfilePage(post?.user)" item-left>
+    <ion-avatar (tap)="messagePage(post.user)" item-left>
       <img src="{{post.user?.photoURL}}" />
     </ion-avatar>
     <p>{{post.user?.displayName}}</p>

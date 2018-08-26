@@ -140,18 +140,10 @@ export class HomePage {
     }
     
     
-    // async doInfinite(infiniteScroll) {
-    //   firebase.firestore().collection("/feeds/" + this.user.checkdn.placeid + "/feed/")
-    //   .orderBy("timestamp", "desc")
-    //   .limit(this.feed.length + 2)
-    //   .onSnapshot((postSnap)=>{
-    //     let posts = [];
-    //     postSnap.forEach((post)=>{
-    //       posts.push(post.data())
-    //     })
-    //     this.feed = posts;
-    //     infiniteScroll.complete()
-    //   })
-      
-    // }
+    messageListPage(){
+      this.navCtrl.push("MessageListPage")
+    }
+    messagePage(recipient) {
+      this.navCtrl.push('MessagePage', {recipient: recipient});
+    }
 }
