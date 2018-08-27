@@ -29,7 +29,6 @@ export class HomePage {
   async ionViewDidLoad() {
     this.user = await this.getUser();
     this.checkHasAccount();
-    this.watchCheckdn();
   }
 
 
@@ -45,10 +44,17 @@ export class HomePage {
   }
 
   async checkHasAccount(){
-    let exist = await this.fs.checkDocExists("users", this.user.uid);
-    if(!exist){
+    if(this.user){
+      let exist = await this.fs.checkDocExists("users", this.user.uid);
+      if(!exist){
+        this.navCtrl.setRoot("WelcomePage")
+      } else {
+        this.watchCheckdn()
+      }
+    } else {
       this.navCtrl.setRoot("WelcomePage")
     }
+   
   }
 
   async watchCheckdn(){
