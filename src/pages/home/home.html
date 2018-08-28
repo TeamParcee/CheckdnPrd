@@ -8,8 +8,10 @@
 
     <ion-title>Home</ion-title>
     <ion-buttons end>
+      
         <button (click)="messageListPage()"  ion-button>
-          <ion-icon name="mail"></ion-icon>
+          <ion-icon style="font-size: 30px" name="mail"></ion-icon>
+          <ion-badge *ngIf="newItemCount != 0" color="danger">{{newItemCount}}</ion-badge>
         </button>
       </ion-buttons>
   </ion-toolbar>

@@ -7,19 +7,26 @@
 <ion-content >
 <ion-content>
   <div>
-     <ion-list no-border="">
-      <ion-item no-lines="" *ngFor="let message of messages" tappable (click)="messagePage(message.user, message.mid)">
-        <ion-avatar item-start>
-          <img src="{{message.user.photoURL}}" >
-          <div id="online"></div>
-        </ion-avatar>
-        <h2>{{ message.user.displayName}}</h2>
-        <p text-nowrap>{{ message.text}}</p>
-        <span item-end="" class="right_side">
-      <time>{{message.timestamp | date:'shortTime'}}</time>
-      <ion-badge *ngIf="message.new" color="secondary">1</ion-badge>
-    </span>
-      </ion-item>
+     <ion-list no-lines no-border="">
+       <ion-item-sliding   *ngFor="let message of messages" tappable >
+          <ion-item (click)="messagePage(message.user, message.mid)">
+              <ion-avatar item-start>
+                <img src="{{message.user.photoURL}}" >
+                <div id="online"></div>
+              </ion-avatar>
+              <h2>{{ message.user.displayName}}</h2>
+              <p text-nowrap>{{ message.text}}</p>
+              <span item-end="" class="right_side">
+              <time>{{message.timestamp | date:'shortTime'}}</time>
+              <ion-badge *ngIf="message.new" color="secondary">1</ion-badge>
+              </span>
+          </ion-item>
+          <ion-item-options side="right">
+              <button (click)="delete(message)" tappable ion-button color="danger">
+                Delete
+              </button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
   
   

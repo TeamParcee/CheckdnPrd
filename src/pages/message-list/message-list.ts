@@ -58,7 +58,9 @@ export class MessageListPage {
      
    }
 
-  
+  delete(message){
+    this.fs.deleteDocument("messageboxes/" + this.user.uid + "/recipients/", message.user.uid);
+  }
 
  
 }

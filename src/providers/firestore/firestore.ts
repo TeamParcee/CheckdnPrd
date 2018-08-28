@@ -60,4 +60,7 @@ export class FirestoreProvider {
       })
     })
   }
+  deleteDocument(col, doc){
+    this.fs.collection(col).doc(doc).delete()
+  }
 }

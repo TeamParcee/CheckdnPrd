@@ -25,7 +25,7 @@ export class HomePage {
   feed;
   message;
   showFooter;
-
+  newItemCount;
   async ionViewDidLoad() {
     this.user = await this.getUser();
     this.checkHasAccount();
@@ -42,14 +42,22 @@ export class HomePage {
       return user
     }
   }
+async watchNewMessages(){
 
+   firebase.firestore().collection("messageboxes/" + this.user.uid + "/recipients/")
+   .where("new", "==", true)
+   .onSnapshot((userSnap)=>{
+      this.newItemCount = userSnap.size
+   })
+ }
   async checkHasAccount(){
     if(this.user){
       let exist = await this.fs.checkDocExists("users", this.user.uid);
       if(!exist){
         this.navCtrl.setRoot("WelcomePage")
       } else {
-        this.watchCheckdn()
+        this.watchCheckdn();
+        this.watchNewMessages();
       }
     } else {
       this.navCtrl.setRoot("WelcomePage")

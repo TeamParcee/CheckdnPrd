@@ -18,7 +18,6 @@ import { StorageProvider } from '../providers/storage/storage';
 import { ToastProvider } from '../providers/toast/toast';
 import { HttpModule } from '@angular/http';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
-import { CheckdnProvider } from '../providers/checkdn/checkdn';
 
   // Initialize Firebase
   var config = {
@@ -62,7 +61,6 @@ import { CheckdnProvider } from '../providers/checkdn/checkdn';
     LocationProvider,
     StorageProvider,
     ToastProvider,
-    CheckdnProvider
   ]
 })
 export class AppModule {}
